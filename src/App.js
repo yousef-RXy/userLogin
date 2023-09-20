@@ -1,15 +1,23 @@
 import React, { useState } from "react";
-import LoginForm from "./components/LoginForm/LoginForm";
-import UserList from "./components/UserList/UserList";
+import UserForm from "./components/Login/NewUser/UserForm";
+import UserList from "./components/Login/UserList/UserList";
 
 function App() {
 	const [users, setUsers] = useState([
-		{ userName: "yousef", passWord: "123", id: "s1" },
+		{ username: "yousef", age: "14", id: "s1" },
 	]);
+
+	const newUserHandle = (newUser) => {
+		setUsers((prevUsers) => {
+			return [newUser, ...prevUsers];
+		});
+		console.log(users);
+	};
+
 	return (
 		<div>
-			<LoginForm onSend={setUsers} />
-			<UserList users={users} />
+			<UserForm onSubmit={newUserHandle} />
+			<UserList items={users} />
 		</div>
 	);
 }
