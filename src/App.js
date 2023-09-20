@@ -11,7 +11,6 @@ function App() {
 		setUsers((prevUsers) => {
 			return [newUser, ...prevUsers];
 		});
-		console.log(users);
 	};
 
 	return (
