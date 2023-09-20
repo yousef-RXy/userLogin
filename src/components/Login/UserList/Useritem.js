@@ -1,10 +1,10 @@
-//import styles from "./UserItem.css";
+import styles from "./UserItem.module.css";
 
 const UserItem = (props) => {
 	return (
-		<p>
+		<li className={styles.userparagraph}>
 			{props.username} ({props.age} years old)
-		</p>
+		</li>
 	);
 };
 export default UserItem;

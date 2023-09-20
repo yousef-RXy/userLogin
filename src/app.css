@@ -1,0 +1,17 @@
+:root {
+	background-color: black;
+}
+.test {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.test > div {
+	background-color: aliceblue;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	margin: 1rem auto;
+	width: 90%;
+	max-width: 45rem;
+}

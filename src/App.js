@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserForm from "./components/Login/NewUser/UserForm";
 import UserList from "./components/Login/UserList/UserList";
+import "./app.css";
 
 function App() {
 	const [users, setUsers] = useState([
@@ -14,9 +15,14 @@ function App() {
 	};
 
 	return (
-		<div>
-			<UserForm onSubmit={newUserHandle} />
-			<UserList items={users} />
+		<div className="test">
+			<div>
+				<UserForm onSubmit={newUserHandle} />
+			</div>
+
+			<div>
+				<UserList items={users} />
+			</div>
 		</div>
 	);
 }

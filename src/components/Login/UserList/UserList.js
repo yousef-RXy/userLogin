@@ -1,10 +1,10 @@
-//import styles from "./UserList.css";
+import styles from "./UserList.module.css";
 
 import UserItem from "./Useritem";
 
 const UserList = (props) => {
 	return (
-		<div>
+		<ul className={styles.user}>
 			{props.items.map((u) => (
 				<UserItem
 					key={u.id}
@@ -12,7 +12,7 @@ const UserList = (props) => {
 					age={u.age}
 				/>
 			))}
-		</div>
+		</ul>
 	);
 };
 export default UserList;
