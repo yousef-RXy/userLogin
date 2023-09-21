@@ -1,5 +1,5 @@
 :root {
-	background-color: black;
+	background-color: #1f1f1f;
 }
 .test {
 	display: flex;
@@ -8,10 +8,11 @@
 }
 
 .test > div {
-	background-color: aliceblue;
 	padding: 0.5rem 1rem;
-	border-radius: 0.5rem;
 	margin: 1rem auto;
 	width: 90%;
 	max-width: 45rem;
+	background: white;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+	border-radius: 10px;
 }

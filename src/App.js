@@ -4,9 +4,7 @@ import UserList from "./components/Login/UserList/UserList";
 import "./app.css";
 
 function App() {
-	const [users, setUsers] = useState([
-		{ username: "yousef", age: "14", id: "s1" },
-	]);
+	const [users, setUsers] = useState([]);
 
 	const newUserHandle = (newUser) => {
 		setUsers((prevUsers) => {
@@ -20,9 +18,11 @@ function App() {
 				<UserForm onSubmit={newUserHandle} />
 			</div>
 
-			<div>
-				<UserList items={users} />
-			</div>
+			{users.length > 0 && (
+				<div>
+					<UserList items={users} />
+				</div>
+			)}
 		</div>
 	);
 }
