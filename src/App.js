@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserForm from "./components/Login/NewUser/UserForm";
 import UserList from "./components/Login/UserList/UserList";
 import "./app.css";
+import Wrapper from "./components/Helpers/Wrapper";
 
 function App() {
 	const [users, setUsers] = useState([]);
@@ -13,7 +14,7 @@ function App() {
 	};
 
 	return (
-		<div className="test">
+		<Wrapper className="test">
 			<div>
 				<UserForm onSubmit={newUserHandle} />
 			</div>
@@ -23,7 +24,7 @@ function App() {
 					<UserList items={users} />
 				</div>
 			)}
-		</div>
+		</Wrapper>
 	);
 }
 
