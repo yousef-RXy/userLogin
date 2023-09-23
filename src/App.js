@@ -14,16 +14,17 @@ function App() {
 	};
 
 	return (
-		<Wrapper className="test">
-			<div>
-				<UserForm onSubmit={newUserHandle} />
-			</div>
-
-			{users.length > 0 && (
+		<Wrapper>
+			<div className="test">
 				<div>
-					<UserList items={users} />
+					<UserForm onSubmit={newUserHandle} />
 				</div>
-			)}
+				{users.length > 0 && (
+					<div>
+						<UserList items={users} />
+					</div>
+				)}
+			</div>
 		</Wrapper>
 	);
 }
