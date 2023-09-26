@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./UserForm.css";
 import Button from "../../UI/Button/Button";
 import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 const UserForm = (props) => {
-	const [username, setUsername] = useState("");
-	const [age, setAge] = useState("");
+	const enteredUsername = useRef();
+	const enteredAge = useRef();
 	const [error, setError] = useState();
 
 	const formSubmitHandler = (event) => {
 		event.preventDefault();
+		const username = enteredUsername.current.value;
+		const age = enteredAge.current.value;
 		const user = {
 			username: username,
 			age: age,
@@ -30,16 +32,8 @@ const UserForm = (props) => {
 			return;
 		}
 		props.onSubmit(user);
-		setUsername("");
-		setAge("");
-	};
-
-	const usernameChangeHandler = (event) => {
-		setUsername(event.target.value);
-	};
-
-	const ageChangeHandler = (event) => {
-		setAge(event.target.value);
+		enteredUsername.current.value = "";
+		enteredAge.current.value = "";
 	};
 
 	const errorHandler = () => {
@@ -64,8 +58,7 @@ const UserForm = (props) => {
 						<label htmlFor="Username">Username</label>
 						<input
 							id="Username"
-							onChange={usernameChangeHandler}
-							value={username}
+							ref={enteredUsername}
 						/>
 					</div>
 
@@ -75,8 +68,7 @@ const UserForm = (props) => {
 							id="Age"
 							type="number"
 							step={1}
-							onChange={ageChangeHandler}
-							value={age}
+							ref={enteredAge}
 						/>
 					</div>
 

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 
 import classes from "./ErrorModal.module.css";
 import Button from "../Button/Button";
