@@ -29,14 +29,17 @@ function App() {
 	};
 
 	return (
-		<AuthContex.Provider>
-			<MainHeader
-				isAuthenticated={isLoggedIn}
-				onLogout={logoutHandler}
-			/>
+		<AuthContex.Provider
+			value={{
+				isLoggedIn: isLoggedIn,
+				onLogin: loginHandler,
+				onLogout: logoutHandler,
+			}}
+		>
+			<MainHeader />
 			<main>
-				{!isLoggedIn && <Login onLogin={loginHandler} />}
-				{isLoggedIn && <Home onLogout={logoutHandler} />}
+				{!isLoggedIn && <Login />}
+				{isLoggedIn && <Home />}
 			</main>
 		</AuthContex.Provider>
 	);
